@@ -1,0 +1,123 @@
+<div class="drinkDiv">
+  <form [formGroup]="createForm" (ngSubmit) = "onSubmit()">
+    <h1 style="font-size: 45px;font-weight: bold">Drink Form</h1><br/>
+    <br/>
+<div class="row">
+  <div class="col-lg-6">
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input type="text" formControlName="name" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.name.errors }" id="name" autofocus/>
+      <div *ngIf="submitted && f.name.errors" class="invalid-feedback">
+        <div *ngIf="f.name.errors.required" class="text-danger">Name is required</div>
+      </div>
+    </div>
+
+
+    <div class="form-group">
+      <label for="category">Category</label>
+      <input type="text" formControlName="category" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.category.errors }" id="category"/>
+      <div *ngIf="submitted && f.category.errors" class="invalid-feedback">
+        <div *ngIf="f.category.errors.required" class="text-danger">Category is required</div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="nutrition">Nutrition</label>
+      <input type="text" formControlName="nutrition" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.nutrition.errors }" id="nutrition"/>
+      <div *ngIf="submitted && f.nutrition.errors" class="invalid-feedback">
+        <div *ngIf="f.nutrition.errors.required" class="text-danger">Nutrition is required</div>
+
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="description">Description</label>
+      <input type="text" formControlName="description" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.description.errors }" id="description"/>
+      <div *ngIf="submitted && f.description.errors" class="invalid-feedback">
+        <div *ngIf="f.description.errors.required" class="text-danger">description is required</div>
+
+      </div>
+    </div>
+
+
+  </div>
+  <div class="col-lg-6">
+
+
+
+    <div class="form-group">
+      <label for="ingredients">ingredients</label>
+      <input type="text" formControlName="ingredients" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.ingredients.errors }" id="ingredients" />
+      <div *ngIf="submitted && f.ingredients.errors" class="invalid-feedback">
+        <div *ngIf="f.ingredients.errors.required" class="text-danger">Ingredients is required</div>
+
+      </div>
+    </div>
+
+
+
+
+    <h3>Choose File</h3>
+    <div class="form-group">
+      <input type="file" formControlName="image" (change)="fileProgress($event)" />
+    </div>
+    <div *ngIf="fileUploadProgress">
+      Upload progress: {{ fileUploadProgress }}
+    </div>
+    <div class="image-preview mb-3" *ngIf="previewUrl">
+      <img [src]="previewUrl" height="300" />
+    </div>
+
+    <div class="mb-3" *ngIf="uploadedFilePath">
+      {{uploadedFilePath}}
+    </div>
+
+
+    <div class="form-group">
+      <label for="price">Price $$</label>
+      <input type="text" formControlName="price" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.price.errors }" id="price" />
+      <div *ngIf="submitted && f.price.errors" class="invalid-feedback">
+        <div *ngIf="f.price.errors.required" class="text-danger">price is required</div>
+
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--    <div class="form-group">-->
+<!--      <label for="image">Image</label>-->
+<!--      <input type="text" formControlName="image" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.image.errors }" id="image" />-->
+
+<!--    </div>-->
+
+
+
+
+    <div class="form-group">
+      <br/>
+      <button class="btn btn-success" type="submit">Save</button>
+    </div>
+
+
+
+
+
+  </form>
+</div>
+

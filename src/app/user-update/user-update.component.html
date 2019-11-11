@@ -1,0 +1,30 @@
+<div class="movieDiv">
+  <h1 style="font-size: 45px;font-weight: bold">Update Form</h1><br/>
+  <form (ngSubmit) = "userupdate(updateUser)">
+    <br/>
+    <label>First Name</label>
+    <input class="form-control col-md-7" [(ngModel)] = "updateUser.firstName" id="firstname" name="firstName">
+
+    <br/>
+    <label>Last Name</label>
+    <input class="form-control col-md-7" [(ngModel)]="updateUser.lastName" id="lastname" name="lastName">
+
+    <br/>
+    <label>Email</label>
+    <input class="form-control col-md-7" [(ngModel)]="updateUser.email" id="email" name="email">
+
+    <br/>
+    <label>Level</label>
+    <input type="Number" class="form-control col-md-7" [(ngModel)]="updateUser.level" id="level" name="level">
+    <br/>
+    <label>Date of Birth</label>
+    <input class="form-control col-md-7" [(ngModel)]="updateUser.dob" id="budget" name="dob" (click)="picker.open()" [matDatepicker] = "picker">
+
+    <mat-datepicker #picker></mat-datepicker>
+    <br/>
+    <button class="btn btn-success" type="submit">Update</button>
+
+  </form>
+</div>
+
+

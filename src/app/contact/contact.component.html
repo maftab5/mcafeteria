@@ -1,0 +1,53 @@
+<div class="contactDiv">
+  <form [formGroup]="contactForm" (ngSubmit) = "onSubmit()">
+    <h1 style="font-size: 45px;font-weight: bold">Contact Form</h1><br/>
+    <br/>
+
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input type="text" formControlName="name" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.name.errors }" id="name" autofocus/>
+      <div *ngIf="submitted && f.name.errors" class="invalid-feedback">
+        <div *ngIf="f.name.errors.required" class="text-danger">Name is required</div>
+      </div>
+    </div>
+
+
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input type="text" formControlName="email" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.email.errors }" id="email"/>
+      <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+        <div *ngIf="f.email.errors.required" class="text-danger">Email is required</div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="address">Address</label>
+      <input type="text" formControlName="address" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.address.errors }" id="address"/>
+      <div *ngIf="submitted && f.address.errors" class="invalid-feedback">
+        <div *ngIf="f.address.errors.required" class="text-danger">Address is required</div>
+
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="comment">Comment</label>
+      <input type="text" formControlName="comment" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.comment.errors }" id="comment"/>
+      <div *ngIf="submitted && f.comment.errors" class="invalid-feedback">
+        <div *ngIf="f.comment.errors.required" class="text-danger">Comment is required</div>
+
+      </div>
+    </div>
+
+
+    <div class="form-group">
+      <br/>
+      <button class="btn btn-success" type="submit">Save</button>
+    </div>
+
+
+
+
+
+  </form>
+</div>
+

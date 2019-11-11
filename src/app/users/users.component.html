@@ -1,0 +1,37 @@
+
+
+
+
+
+
+<div class="row no-collapse-1 col-lg-offset-2">
+<div class="breadcrumb">Users</div>
+  <section class="4u"  *ngFor="let siteuser of siteusers">
+
+
+    <!--user images-->
+
+    <div class="col-lg-6 col-md-6 col-sm-6">
+      <div class="card" style="width: 18rem;">
+        <img class="card-img-top" src="assets/images/user.jpg" alt="Card image cap">
+        <div class="card-body">
+          <p class="card-text">First Name : {{siteuser.firstName}}</p>
+          <p class="card-text">Last Name : {{siteuser.lastName}}</p>
+          <p class="card-text">Email : {{siteuser.email}}</p>
+          <p class="card-text">Date of Birth :{{ siteuser.dob | date : "yyyy-M-dd"}}</p>
+          <p class="card-text">Level : {{siteuser.level}}</p>
+
+          <button class="offset-md-1 col-md-5 btn btn-success" routerLink="/userupdate/{{siteuser._id}}" style="margin-right: 10px">Update</button>
+          <div class="offset-md-1 col-md-5 btn btn-success" (click)="userDelete(siteuser._id)">Delete</div><br/><br/>
+        </div>
+      </div>
+
+    </div>
+
+
+
+
+  </section>
+
+
+</div>

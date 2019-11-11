@@ -1,0 +1,75 @@
+<div class="movieDiv">
+  <form [formGroup]="registerForm" (ngSubmit) = "onSubmit()">
+    <h1 style="font-size: 45px;font-weight: bold">SignUp Form</h1><br/>
+    <br/>
+
+    <div class="form-group">
+      <label for="firstName">First Name</label>
+      <input type="text" formControlName="firstName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }" id="firstName" autofocus/>
+      <div *ngIf="submitted && f.firstName.errors" class="invalid-feedback">
+        <div *ngIf="f.firstName.errors.required" class="text-danger">First Name is required</div>
+      </div>
+    </div>
+
+
+    <div class="form-group">
+      <label for="lastName">First Name</label>
+      <input type="text" formControlName="lastName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.lastName.errors }" id="lastName"/>
+      <div *ngIf="submitted && f.lastName.errors" class="invalid-feedback">
+        <div *ngIf="f.lastName.errors.required" class="text-danger">Last Name is required</div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input type="text" formControlName="email" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.email.errors }" id="email"/>
+      <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+        <div *ngIf="f.email.errors.required" class="text-danger">Email is required</div>
+        <div *ngIf="f.email.errors.email" class="text-danger">Email should be a valid </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input type="password" formControlName="password" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" id="password"/>
+      <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+        <div *ngIf="f.password.errors.required" class="text-danger">Password is required</div>
+        <div *ngIf="f.password.errors.minlength" class="text-danger">Password must be at least 4 character long</div>
+
+      </div>
+    </div>
+
+
+
+    <div class="form-group">
+      <label>Confirm Password</label>
+      <input type="password" formControlName="confirmPassword" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.confirmPassword.errors }" />
+      <div *ngIf="submitted && f.confirmPassword.errors" class="invalid-feedback">
+        <div *ngIf="f.confirmPassword.errors.required" class="text-danger">Confirm Password is required</div>
+        <div *ngIf="f.confirmPassword.errors.mustMatch" class="text-danger">Passwords must match</div>
+      </div>
+    </div>
+
+
+    <div class="form-group">
+
+        <label for="dob">Date of Birth</label>
+
+          <input matInput [matDatepicker] = "picker" type="text" formControlName="dob" class="form-control col-lg-9 col-md-9 col-sm-11 col-xs-11" [ngClass]="{ 'is-invalid': submitted && f.dob.errors }" id="dob" (click)="picker.open()" (focus)="picker.open()">
+
+          <mat-datepicker #picker></mat-datepicker>
+
+      <div *ngIf="submitted && f.dob.errors" class="invalid-feedback">
+        <div *ngIf="f.dob.errors.required">Date of birth is required</div>
+      </div>
+    </div>
+<div class="form-group">
+  <br/>
+  <button class="btn btn-success" type="submit">Save</button>
+</div>
+
+
+
+  </form>
+</div>
+

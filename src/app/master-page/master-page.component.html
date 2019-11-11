@@ -1,0 +1,220 @@
+<!--================ Frist hader Area =================-->
+<div class="first_header">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+        <div class="header_contact_details">
+          <a href="#"><i class="fa fa-phone"></i>+1 (437) 994 4453</a>
+          <a href="#"><i class="fa fa-envelope-o"></i>+1 (437) 994 4453</a>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="event_btn_inner">
+          <a class="event_btn" href="table.html"><i class="fa fa-table" aria-hidden="true"></i>Book a Table</a>
+          <a class="event_btn" href="event.html"><i class="fa fa-calendar" aria-hidden="true"></i>Book an Event</a>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="header_social">
+          <ul>
+            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+            <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+            <li><a href="#"><i class="fa fa-rss"></i></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!--================End Footer Area =================-->
+
+<!--================End Footer Area =================-->
+<header class="main_menu_area">
+  <nav class="navbar navbar-default">
+    <div class="container">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#"><img src="img/logo-1.png" alt=""></a>
+      </div>
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav navbar-right">
+          <li class="active"><a routerLink="/">Home</a></li>
+          <li class="active"><a routerLink="/adddrinks">Add Drinks</a></li>
+          <li class="dropdown submenu">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Menu<i class="fa fa-angle-down" aria-hidden="true"></i></a>
+            <ul class="dropdown-menu">
+              <li><a href="about-us.html">Coffees</a></li>
+              <li><a href="about-us2.html">Teas</a></li>
+              <li><a href="about-us2.html">Blended Beverages</a></li>
+              <li><a href="about-us2.html">Cold Drinks</a></li>
+              <li><a href="menu-grid.html">Hot Bakery</a></li>
+              <li><a href="menu-list.html">Lunch</a></li>
+              <li><a href="menu-list.html">Bakery</a></li>
+              <li><a href="menu-list.html">Deserts</a></li>
+            </ul>
+          </li>
+
+
+          <li class="dropdown submenu">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Gift Card <i class="fa fa-angle-down" aria-hidden="true"></i></a>
+            <ul class="dropdown-menu">
+              <li><a href="event.html">Buy Gift Card</a></li>
+              <li><a href="table.html">Manage Card</a></li>
+              <li><a href="table.html">Check Balance</a></li>
+            </ul>
+          </li>
+          <li class="dropdown submenu">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Rewards <i class="fa fa-angle-down" aria-hidden="true"></i></a>
+            <ul class="dropdown-menu">
+              <li><a href="blog.html">Check Rewards</a></li>
+              <li><a href="blog-gallery.html">Redeem Reward</a></li>
+            </ul>
+          </li>
+
+          <li class="dropdown submenu">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Contact <i class="fa fa-angle-down" aria-hidden="true"></i></a>
+            <ul class="dropdown-menu">
+              <li><a routerLink="/contact">Contact</a></li>
+              <li><a routerLink="/about">About Us</a></li>
+
+            </ul>
+          </li>
+
+
+          <li class="dropdown submenu">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Nutrition <i class="fa fa-angle-down" aria-hidden="true"></i></a>
+            <ul class="dropdown-menu">
+              <li><a href="blog.html">Drinks</a></li>
+              <li><a href="blog-gallery.html">Food</a></li>
+            </ul>
+          </li>
+
+          <li><a href="#" *ngIf="!isLoggedIn()" (click)="openModal('custom-modal-1')">Log In</a></li>
+          <li class="dropdown submenu">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" *ngIf="isLoggedIn()" class="usertxt">{{getUsername()}}<i class="fa fa-angle-down" aria-hidden="true"></i></a>
+            <ul class="dropdown-menu">
+              <li><a routerLink="/userupdate/{{getUserId()}}">Profile</a></li>
+              <li><a routerLink="admin">admin</a></li>
+              <li><a href="#">Change Password</a></li>
+              <li><a href="" (click)="logOut()">Log Out</a></li>
+
+            </ul>
+
+          </li>
+
+          <li><a routerLink="cart"><i class="fa fa-shopping-cart" aria-hidden="true"></i><span>{{drinkService.calculateLocalCartProdCount()}}</span></a></li>
+        </ul>
+      </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+  </nav>
+</header>
+
+
+//for login and signup modal
+
+
+<jw-modal id="custom-modal-1" class="darken-pseudo" close-on-success="true">
+
+  <mat-tab-group animationDuration="0ms">
+    <mat-tab label="LOGIN" class="btn-success"><app-login></app-login></mat-tab>
+    <mat-tab label="SIGNUP" class="btn-success"><app-user-create></app-user-create></mat-tab>
+
+  </mat-tab-group>
+
+<!--  <button (click)="closeModal('custom-modal-1');">Close</button>-->
+</jw-modal>
+
+
+
+//contents of ther pages
+<div class="contentdiv">
+
+  <router-outlet></router-outlet>
+</div>
+
+<footer class="footer_area">
+  <div class="footer_widget_area">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3">
+          <aside class="f_widget about_widget">
+            <div class="f_w_title">
+              <h4>ABOUT RedCayenne</h4>
+            </div>
+            <p>Lorem ipsum dolor sit amet, consectur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris ut.</p>
+            <ul>
+              <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+              <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+              <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+              <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+            </ul>
+          </aside>
+        </div>
+        <div class="col-md-3">
+          <aside class="f_widget contact_widget">
+            <div class="f_w_title">
+              <h4>CONTACT US</h4>
+            </div>
+            <p>Have questions, comments or just want to say hello:</p>
+            <ul>
+              <li><a href="#"><i class="fa fa-envelope"></i>backpiper.com@gmail.com</a></li>
+              <li><a href="#"><i class="fa fa-phone"></i>+88 01911 854 378</a></li>
+              <li><a href="#"><i class="fa fa-map-marker"></i>5001 E. Colorado Blvd. Suite 820,<br /> Pasadena, CA 91106</a></li>
+            </ul>
+          </aside>
+        </div>
+        <div class="col-md-3">
+          <aside class="f_widget twitter_widget">
+            <div class="f_w_title">
+              <h4>Twitter Feed</h4>
+            </div>
+            <ul>
+              <li>
+                <a href="#">@_sumonrahman:</a> Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat.
+              </li>
+              <li>
+                <a href="#">@_sumonrahman:</a> Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat.
+              </li>
+            </ul>
+          </aside>
+        </div>
+        <div class="col-md-3">
+          <aside class="f_widget gallery_widget">
+            <div class="f_w_title">
+              <h4>Gallery On Flickr</h4>
+            </div>
+            <ul>
+              <li><a href="#"><img src="assets/img/gallery/f-w-gallery/f-w-gallery-1.jpg" alt=""><i class="fa fa-search"></i></a></li>
+              <li><a href="#"><img src="assets/img/gallery/f-w-gallery/f-w-gallery-2.jpg" alt=""><i class="fa fa-search"></i></a></li>
+              <li><a href="#"><img src="assets/img/gallery/f-w-gallery/f-w-gallery-3.jpg" alt=""><i class="fa fa-search"></i></a></li>
+              <li><a href="#"><img src="assets/img/gallery/f-w-gallery/f-w-gallery-4.jpg" alt=""><i class="fa fa-search"></i></a></li>
+              <li><a href="#"><img src="assets/img/gallery/f-w-gallery/f-w-gallery-5.jpg" alt=""><i class="fa fa-search"></i></a></li>
+              <li><a href="#"><img src="assets/img/gallery/f-w-gallery/f-w-gallery-6.jpg" alt=""><i class="fa fa-search"></i></a></li>
+            </ul>
+          </aside>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="copy_right_area">
+    <div class="container">
+      <div class="pull-left">
+        <h5><p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+          Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | Cafe
+          <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+        </p></h5>
+      </div>
+
+    </div>
+  </div>
+</footer>
+

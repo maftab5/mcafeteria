@@ -1,0 +1,41 @@
+<div>
+  <h1 style="font-size: 45px;font-weight: bold">Update Form</h1><br/>
+  <form (ngSubmit) = "drinkUpdate(updateDrink)">
+    <br/>
+    <label>Name</label>
+    <input class="form-control col-md-7" [(ngModel)] = "updateDrink.name" id="name" name="name">
+
+    <br/>
+    <label>Description</label>
+    <input class="form-control col-md-7" [(ngModel)]="updateDrink.description" id="description" name="description">
+
+    <br/>
+
+    <label>Category</label>
+    <input class="form-control col-md-7" [(ngModel)]="updateDrink.category" id="category" name="category">
+
+    <br/>
+
+    <label>ingredients</label>
+    <input class="form-control col-md-7" [(ngModel)]="updateDrink.ingredients" id="ingredients" name="ingredients">
+
+    <br/>
+    <label>nutrition</label>
+    <input class="form-control col-md-7" [(ngModel)]="updateDrink.nutrition" id="nutrition" name="nutrition">
+    <br/>
+
+        <input class="form-control col-md-7" [(ngModel)]="updateDrink.status" id="status" name="status" type="hidden">
+        <br/>
+
+    <label>price</label>
+    <input type="Number" class="form-control col-md-7" [(ngModel)]="updateDrink.price" id="price" name="price">
+    <br/>
+
+
+
+    <button class="btn btn-success" type="submit">Update</button>
+
+  </form>
+</div>
+
+

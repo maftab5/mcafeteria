@@ -1,0 +1,92 @@
+<div class="movieDiv">
+  <form [formGroup]="shippingForm" (ngSubmit) = "onSubmit()">
+    <h1 style="font-size: 45px;font-weight: bold">Shipping Address</h1><br/>
+    <br/>
+
+    <div class="form-group">
+      <label for="firstName">First Name</label>
+      <input type="text" formControlName="firstName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }" id="firstName" autofocus/>
+      <div *ngIf="submitted && f.firstName.errors" class="invalid-feedback">
+        <div *ngIf="f.firstName.errors.required" class="text-danger">First Name is required</div>
+      </div>
+    </div>
+
+
+    <div class="form-group">
+      <label for="lastName">First Name</label>
+      <input type="text" formControlName="lastName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.lastName.errors }" id="lastName"/>
+      <div *ngIf="submitted && f.lastName.errors" class="invalid-feedback">
+        <div *ngIf="f.lastName.errors.required" class="text-danger">Last Name is required</div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="address">Address</label>
+      <input type="text" formControlName="address" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.address.errors }" id="address"/>
+      <div *ngIf="submitted && f.address.errors" class="invalid-feedback">
+        <div *ngIf="f.address.errors.required" class="text-danger">address is required</div>
+
+      </div>
+    </div>
+
+
+    <div class="form-group">
+      <label for="address2">Address 2 (Optional) </label>
+      <input type="text" formControlName="address2" class="form-control" id="address2"/>
+
+    </div>
+
+    <div class="form-group">
+      <label for="country">Select Country</label>
+      <select class="form-control" id="country" formControlName="country" (change)="onChangeCountry($event.target.value)">
+        <option *ngFor="let country of countryInfo; let i = index" value="{{i}}">{{country.CountryName}}</option>
+      </select>
+    </div>
+    <div *ngIf="submitted && f.country.errors" class="invalid-feedback">
+      <div *ngIf="f.country.errors.required" class="text-danger">Please select country </div>
+
+    </div>
+
+    <div class="form-group">
+      <label for="state">State</label>
+      <select class="form-control" id="state" formControlName="state" (change)="onChangeState($event.target.value)">
+        <option *ngIf="stateInfo == ''" value="-1">--Select State--</option>
+        <option *ngFor="let state of stateInfo; let j = index" value="{{j}}">{{state.StateName}}</option>
+      </select>
+    </div>
+    <div *ngIf="submitted && f.state.errors" class="invalid-feedback">
+      <div *ngIf="f.state.errors.required" class="text-danger">Please select state </div>
+
+    </div>
+
+    <div class="form-group">
+      <label>Select City</label>
+      <select class="form-control" formControlName="city">
+        <option *ngIf="cityInfo == ''" value="-1">--Select CIty--</option>
+        <option *ngFor="let city of cityInfo; let k = index" value="{{k}}">{{city}}</option>
+      </select>
+    </div>
+
+
+
+    <div class="form-group">
+      <label for="zipcode">Zip Code</label>
+      <input type="text" formControlName="zipcode" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.zipcode.errors }" id="zipcode"/>
+      <div *ngIf="submitted && f.zipcode.errors" class="invalid-feedback">
+        <div *ngIf="f.zipcode.errors.required" class="text-danger">zipcode is required</div>
+
+      </div>
+    </div>
+
+
+
+    <div class="form-group">
+      <br/>
+      <button class="btn btn-success" type="submit">Continue to checkout</button>
+    </div>
+
+
+
+  </form>
+</div>
+
