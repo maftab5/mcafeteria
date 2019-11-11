@@ -15,7 +15,7 @@ export class DrinksService {
   'use strict';
 
  private navbarCartCount = 0;
-  private drinkUrl = 'http://localhost:3000/api/drinks';
+  private drinkUrl = 'http://capestone-angular.herokuapp.com/api/drinks';
   private countryUrl: string =  "https://raw.githubusercontent.com/sagarshirbhate/Country-State-City-Database/master/Contries.json";
   constructor(
     private http: HttpClient,

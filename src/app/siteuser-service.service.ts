@@ -13,7 +13,7 @@ import {Authresponse} from "./authresponse";
 })
 export class SiteuserServiceService {
 
-  private userUrl = 'http://localhost:3000/api/users';
+  private userUrl = 'http://capestone-angular.herokuapp.com/api/users';
 
   //for modal close
   private element: any;
