@@ -50,7 +50,7 @@ import { CalculateComponent } from './calculate/calculate.component';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { PaymentComponent } from './payment/payment.component';
 import {NgxPayPalModule} from "ngx-paypal";
-import {FileSelectDirective} from "ng2-file-upload";
+
 
 
 @NgModule({
@@ -77,8 +77,7 @@ import {FileSelectDirective} from "ng2-file-upload";
     ProductComponent,
     CalculateComponent,
     CheckoutComponent,
-    PaymentComponent,
-    FileSelectDirective
+    PaymentComponent
   ],
   imports: [
     CarouselModule,

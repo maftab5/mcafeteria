@@ -50,8 +50,8 @@
     <div class="form-group">
       <label for="state">State</label>
       <select class="form-control" id="state" formControlName="state" (change)="onChangeState($event.target.value)">
-        <option *ngIf="stateInfo == ''" value="-1">--Select State--</option>
-        <option *ngFor="let state of stateInfo; let j = index" value="{{j}}">{{state.StateName}}</option>
+<!--        <option *ngIf="stateInfo == ''" value="-1">&#45;&#45;Select State&#45;&#45;</option>-->
+<!--        <option *ngFor="let state of stateInfo; let j = index" value="{{j}}">{{state.StateName}}</option>-->
       </select>
     </div>
     <div *ngIf="submitted && f.state.errors" class="invalid-feedback">
@@ -62,8 +62,8 @@
     <div class="form-group">
       <label>Select City</label>
       <select class="form-control" formControlName="city">
-        <option *ngIf="cityInfo == ''" value="-1">--Select CIty--</option>
-        <option *ngFor="let city of cityInfo; let k = index" value="{{k}}">{{city}}</option>
+<!--        <option *ngIf="cityInfo == ''" value="-1">&#45;&#45;Select CIty&#45;&#45;</option>-->
+<!--        <option *ngFor="let city of cityInfo; let k = index" value="{{k}}">{{city}}</option>-->
       </select>
     </div>
 

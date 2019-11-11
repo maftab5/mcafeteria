@@ -23,7 +23,7 @@ export class MasterPageComponent implements OnInit {
     private router : Router,
     private modalService : ModalService,
     private historyService : HistoryService,
-    private drinkService: DrinksService
+    public drinkService: DrinksService
   ) { }
 
   ngOnInit() {
