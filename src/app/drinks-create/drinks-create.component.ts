@@ -37,7 +37,8 @@ export class DrinksCreateComponent implements OnInit {
      image:'',
      ingredients:'',
      category:'',
-     status:0
+     status:0,
+     qty:1
    }
 
 
@@ -64,7 +65,8 @@ export class DrinksCreateComponent implements OnInit {
        price:['',Validators.required],
        ingredients:['',Validators.required],
        category:['',Validators.required],
-       image:''
+       image:'',
+       qty:1
      });
 
 

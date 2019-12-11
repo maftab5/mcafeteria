@@ -14,7 +14,7 @@ export class PaymentComponent implements OnInit {
   total: any;
   showSuccess = false;
   cartProducts: Drinks[];
-
+drinks: Drinks[];
 
   constructor(
     private drinkService: DrinksService
@@ -25,6 +25,12 @@ export class PaymentComponent implements OnInit {
     this.total = localStorage.getItem('total');
 
     this.getCartProduct();
+
+   this.drinkService.createorder();
+  }
+  private orderhistory(drink :any){
+    this.cartProducts = this.drinkService.getLocalCartProducts();
+
   }
   private initConfig(): void {
     this.payPalConfig = {

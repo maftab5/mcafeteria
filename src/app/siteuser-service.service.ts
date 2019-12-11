@@ -92,7 +92,10 @@ export class SiteuserServiceService {
     return this.http.post(url, data );
   }
   //end email
-
+// for forget password
+  fpassword(url,email){
+    return this.http.put(url,email);
+  }
 
   //update user
   userUpdate(newUser: Siteuser): Promise<void | Siteuser>{

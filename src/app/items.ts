@@ -1,7 +1,9 @@
-import {Drinks} from './drinks';
-import {Products} from './products';
+// import {Drinks} from './drinks';
+// import {Drin} from './products';
+
+import {Drinks} from "./drinks";
 
 export class Items {
-  product: Products;
+  product: Drinks;
   quantity: number;
 }

@@ -1,3 +1,6 @@
+body{
+  background-color: lightgray;
+}
 .usertxt{
   color: #ffd658 !important;
   /*font-family: "Arial", sans-serif;*/
@@ -101,3 +104,29 @@ h1,h2,h3,h4,h5,h6,p,ul,ol{ margin:0px; padding:0px;}
   width: 150px;
   z-index: 100;
 }
+
+.fbimg{
+  height: 50px;
+  width: 50px;
+  border-radius: 25px;
+}
+
+
+.details {
+  background-color: whitesmoke;
+  padding: 20px;
+  min-height: 400px;
+  /*font-size: 35px;*/
+  -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+  box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+}
+.card img{
+  height: 250px;
+  width: 250px;
+  border-radius: 50% !important;
+}
+
+/*.detailimg {*/
+
+

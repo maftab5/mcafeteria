@@ -7,12 +7,15 @@ import {HttpHeaders} from '@angular/common/http';
 import {BROWSER_STORAGE} from './storage';
 import {AuthenticationService} from './authentication.service';
 import {Observable} from "rxjs";
+import {Items} from "./items";
+import {Loginusers} from "./loginusers";
 
 @Injectable({
   providedIn: 'root'
 })
 export class DrinksService {
-  'use strict';
+
+
 
  private navbarCartCount = 0;
   private drinkUrl = 'https://capestone.herokuapp.com/api/drinks';
@@ -59,7 +62,7 @@ export class DrinksService {
   // to create drinks
   createDrink(newDrink: Drinks): Promise<void | Drinks> {
    console.log("service \n");
-console.log(newDrink);
+   console.log(newDrink);
 
 
     // const data = new FormData();
@@ -79,6 +82,45 @@ console.log(newDrink);
       .toPromise()
       .then(response => response as Drinks )
       .catch(this.handleError);
+  }
+
+  public isLoggedIn() : boolean{
+    const token: string = this.getToken();
+    if(token){
+      const payload = JSON.parse(atob(token.split('.')[1]));
+// console.log(payload);
+      // console.log(payload);
+
+      return payload.exp > (Date.now() /1000);
+    }else{
+      return false;
+    }
+  }
+  public getToken() : string{
+    return this.storage.getItem('login');
+  }
+
+
+  public getCurrentUserId(): Loginusers {
+    if (this.isLoggedIn()) {
+      const token: string = this.getToken();
+      const {_id} = JSON.parse(atob(token.split('.')[1]));
+      // console.log({_id});
+      return {_id} as Loginusers;
+    }
+  }
+
+  createorder() : Promise<void | Drinks[]>{
+    const orders = this.getLocalCartProducts();
+const data = {
+  "items" : orders,
+   "id" : this.getCurrentUserId()
+}
+    return this.http.post(this.drinkUrl + "/" + "orders",data)
+      .toPromise()
+      .then(response => response as Drinks[])
+      .catch(this.handleError);
+
   }
 
 // update drink
@@ -114,16 +156,60 @@ console.log(newDrink);
       .catch(this.handleError);
   }
 
+
+
   // for cart
   addToCart(drinks: Drinks) : void {
     let products : Drinks[];
+    let   items: Items[] = [];
+
     // localStorage.removeItem('cart');
     products = JSON.parse(localStorage.getItem('cart')) || [];
     products.push(drinks);
+    // if(products){
+    //   products.map(prod=>{
+    //     return prod
+    //   }).forEach( function(prod,index){
+    //     if(prod._id == drinks._id){
+    //       console.log("same");
+    //       if(items.length > 0){
+    //         items[index].quantity += items[index].quantity;
+    //         //console.log(items[index].quantity);
+    //         console.log(items);
+    //       }
+    //
+    //     }else{
+    //       prod => items.push({product : prod,quantity : 1});
+    //
+    //     }
+    //   });
+    // }else{
+    //   products.push(drinks);
+    // }
+
+
+
+
+    // console.log(items);
+
+
+
+    // console.log(items);
+    // products.forEach(function (item, index) {
+    //   if(drinks._id == item._id){
+    //
+    //   }
+    // })
 
     localStorage.setItem('cart',JSON.stringify(products));
-    // console.log(products);
+     // console.log(products);
     this.calculateLocalCartProdCount();
+
+  }
+
+
+  // for order history
+  orderhistory(order : Drinks[]){
 
   }
 
@@ -151,7 +237,9 @@ console.log(newDrink);
   }
   getLocalCartProducts(): Drinks[] {
     const products: Drinks[] = JSON.parse(localStorage.getItem('cart')) || [];
+    console.log(products);
     return  products;
+
   }
 
   private handleError(error: any) {

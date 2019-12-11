@@ -50,9 +50,18 @@ import { CalculateComponent } from './calculate/calculate.component';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { PaymentComponent } from './payment/payment.component';
 import {NgxPayPalModule} from "ngx-paypal";
+import { SocialLoginModule, AuthServiceConfig, FacebookLoginProvider } from 'angularx-social-login';
+import { ForgetpasswordComponent } from './forgetpassword/forgetpassword.component';
+import { OrderhistoryComponent } from './orderhistory/orderhistory.component';
+// import {config} from "rxjs";
 
-
-
+const facebook_oauth_client_id: string = '1083758722015983';
+let config = new AuthServiceConfig([
+  {
+    id: FacebookLoginProvider.PROVIDER_ID,
+    provider: new FacebookLoginProvider(facebook_oauth_client_id)
+  }
+]);
 @NgModule({
   declarations: [
 
@@ -77,7 +86,9 @@ import {NgxPayPalModule} from "ngx-paypal";
     ProductComponent,
     CalculateComponent,
     CheckoutComponent,
-    PaymentComponent
+    PaymentComponent,
+    ForgetpasswordComponent,
+    OrderhistoryComponent
   ],
   imports: [
     CarouselModule,
@@ -93,6 +104,7 @@ import {NgxPayPalModule} from "ngx-paypal";
     HttpModule,
     NgbModule,
     NgxPayPalModule,
+    SocialLoginModule.initialize(config),
 
     RouterModule.forRoot([
       {
@@ -183,6 +195,12 @@ import {NgxPayPalModule} from "ngx-paypal";
       {
         path:'payment',
         component: PaymentComponent
+      },
+
+      // forget password
+      {
+        path:'forgetpassword',
+        component: ForgetpasswordComponent
       }
 
     ]),

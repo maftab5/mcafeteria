@@ -3,6 +3,9 @@ import {Drinks} from '../drinks';
 import {DrinksService} from '../drinks.service';
 import {ActivatedRoute, Router, Params} from '@angular/router';
 import Swal from 'sweetalert2';
+import {Loginusers} from "../loginusers";
+
+import {AuthenticationService} from "../authentication.service";
 
 @Component({
   selector: 'app-drinks',
@@ -15,7 +18,8 @@ export class DrinksComponent implements OnInit {
   swal: any;
   drinks : Drinks[];
 
-  constructor(private drinkService : DrinksService, private route : ActivatedRoute, private router : Router) { }
+  constructor(private drinkService : DrinksService, private route : ActivatedRoute, private router : Router,
+              private authenticationService: AuthenticationService) { }
 
   ngOnInit() {
 
@@ -26,6 +30,18 @@ export class DrinksComponent implements OnInit {
         });
     });
   }
+
+
+  public isLoggedIn() : boolean{
+    return this.authenticationService.isLoggedIn();
+  }
+
+  public getUsername() : string{
+    const user : Loginusers = this.authenticationService.getCurrentUser();
+    // console.log(user);
+    return user ? user.firstName : 'Guest';
+  }
+
 
 
   // add to cart

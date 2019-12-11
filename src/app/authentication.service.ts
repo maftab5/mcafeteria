@@ -7,6 +7,7 @@ import {SiteuserServiceService} from "./siteuser-service.service";
 import {promise} from "selenium-webdriver";
 import {Siteuser} from "./siteuser";
 import {Router} from "@angular/router";
+import {Observable} from "rxjs";
 
 
 @Injectable({
@@ -23,10 +24,12 @@ export class AuthenticationService {
 
   public login(loginUser : Loginusers) : Promise<any>{
 
-
     return  this.siteUserService.login(loginUser)
       .then((authResp : Authresponse)=> this.saveToken(authResp.token));
   }
+  // public getFbProfile(id) : Promise<any>{
+  //   return this.siteUserService.getFbProfile
+  // }
 
   public register(loginUser: Siteuser) : Promise<any>{
     return this.siteUserService.register(loginUser)

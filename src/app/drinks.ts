@@ -8,4 +8,5 @@ export class Drinks {
    nutrition : string;
    image : string;
    status: Number;
+   qty: Number;
 }

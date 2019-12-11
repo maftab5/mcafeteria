@@ -47,8 +47,8 @@ export class CheckoutComponent implements OnInit {
 
       address: ['',Validators.required],
       address2:'',
-      country: ['',Validators.required],
-      state: ['',Validators.required],
+      // country: ['',Validators.required],
+      // state: ['',Validators.required],
       zipcode: ['',Validators.required],
     });
   }

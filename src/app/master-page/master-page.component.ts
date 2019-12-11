@@ -2,10 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import {AuthenticationService} from "../authentication.service";
 import {Siteuser} from "../siteuser";
 import {Loginusers} from "../loginusers";
-import {Router} from "@angular/router";
+import {Router,ActivatedRoute} from "@angular/router";
 import {ModalService} from "../modal.service";
 import {HistoryService} from "../history.service";
 import {DrinksService} from "../drinks.service";
+import {AuthService, FacebookLoginProvider} from "angularx-social-login";
 
 @Component({
   selector: 'app-master-page',
@@ -15,6 +16,7 @@ import {DrinksService} from "../drinks.service";
 export class MasterPageComponent implements OnInit {
   //for modal
   bodyText: string;
+  user: any;
   //end modal
   cartCount : any;
 
@@ -23,7 +25,9 @@ export class MasterPageComponent implements OnInit {
     private router : Router,
     private modalService : ModalService,
     private historyService : HistoryService,
-    public drinkService: DrinksService
+    public drinkService: DrinksService,
+    private _socioAuthServ: AuthService,
+     private activatedRoute: ActivatedRoute
   ) { }
 
   ngOnInit() {
@@ -31,6 +35,29 @@ export class MasterPageComponent implements OnInit {
 
 
   }
+
+
+//for facebook login
+// Method to sign in with facebook.
+signIn(platform: string): void {
+  platform = FacebookLoginProvider.PROVIDER_ID;
+  this._socioAuthServ.signIn(platform).then(
+  (response) => {
+    console.log(platform + " logged in user data is= ", response);
+    localStorage.setItem('fbID',JSON.stringify(response.email));
+    var fb = JSON.parse(localStorage.getItem('fbID'));
+    console.log(fb);
+    this.user = response;
+  }
+);
+}
+  // // Method to log out.
+  signOut(): void {
+    this._socioAuthServ.signOut();
+    this.user = null;
+    console.log('User signed out.');
+  }
+
 
   public logOut(): void{
    localStorage.removeItem('cart');

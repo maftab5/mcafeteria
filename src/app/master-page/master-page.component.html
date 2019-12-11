@@ -48,46 +48,11 @@
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav navbar-right">
           <li class="active"><a routerLink="/">Home</a></li>
-          <li class="active"><a routerLink="/adddrinks">Add Drinks</a></li>
-          <li class="dropdown submenu">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Menu<i class="fa fa-angle-down" aria-hidden="true"></i></a>
-            <ul class="dropdown-menu">
-              <li><a href="about-us.html">Coffees</a></li>
-              <li><a href="about-us2.html">Teas</a></li>
-              <li><a href="about-us2.html">Blended Beverages</a></li>
-              <li><a href="about-us2.html">Cold Drinks</a></li>
-              <li><a href="menu-grid.html">Hot Bakery</a></li>
-              <li><a href="menu-list.html">Lunch</a></li>
-              <li><a href="menu-list.html">Bakery</a></li>
-              <li><a href="menu-list.html">Deserts</a></li>
-            </ul>
-          </li>
+          <li class=""><a routerLink="/drink">Foods & Drinks</a></li>
+          <li class=""><a routerLink="/contact">Contact</a></li>
+          <li class=""><a routerLink="/about">About Us</a></li>
 
 
-          <li class="dropdown submenu">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Gift Card <i class="fa fa-angle-down" aria-hidden="true"></i></a>
-            <ul class="dropdown-menu">
-              <li><a href="event.html">Buy Gift Card</a></li>
-              <li><a href="table.html">Manage Card</a></li>
-              <li><a href="table.html">Check Balance</a></li>
-            </ul>
-          </li>
-          <li class="dropdown submenu">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Rewards <i class="fa fa-angle-down" aria-hidden="true"></i></a>
-            <ul class="dropdown-menu">
-              <li><a href="blog.html">Check Rewards</a></li>
-              <li><a href="blog-gallery.html">Redeem Reward</a></li>
-            </ul>
-          </li>
-
-          <li class="dropdown submenu">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Contact <i class="fa fa-angle-down" aria-hidden="true"></i></a>
-            <ul class="dropdown-menu">
-              <li><a routerLink="/contact">Contact</a></li>
-              <li><a routerLink="/about">About Us</a></li>
-
-            </ul>
-          </li>
 
 
           <li class="dropdown submenu">
@@ -98,18 +63,48 @@
             </ul>
           </li>
 
-          <li><a href="#" *ngIf="!isLoggedIn()" (click)="openModal('custom-modal-1')">Log In</a></li>
-          <li class="dropdown submenu">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" *ngIf="isLoggedIn()" class="usertxt">{{getUsername()}}<i class="fa fa-angle-down" aria-hidden="true"></i></a>
+<!--          <div *ngIf="user">-->
+<!--            <img src="{{ user.photoUrl }}">-->
+<!--            <h4>{{ user.name }}</h4>-->
+<!--            <p>{{ user.email }}</p>-->
+<!--          </div>-->
+
+<!--          <button (click)="signIn('Facebook');">Sign in with Facebook</button><br /><br />-->
+<!--          <button (click)="signOut();">Sign out</button><br /><br />-->
+
+          <li *ngIf="!isLoggedIn()&& !user"><a href="#"  (click)="openModal('custom-modal-1')">Log In /</a></li>
+          <li *ngIf="!user && !isLoggedIn()"><a href="#"  (click)="signIn('Facebook');" > Facebook Login</a></li>
+          <li class="dropdown submenu" *ngIf="isLoggedIn()">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" *ngIf="isLoggedIn()" class="usertxt">
+              <img class="fbimg" src="../../assets/images/user.jpg">
+             <i class="fa fa-angle-down" aria-hidden="true"></i></a>
+
             <ul class="dropdown-menu">
+              <li> <a href="#"> {{getUsername()}}</a></li>
               <li><a routerLink="/userupdate/{{getUserId()}}">Profile</a></li>
               <li><a routerLink="admin">admin</a></li>
-              <li><a href="#">Change Password</a></li>
-              <li><a href="" (click)="logOut()">Log Out</a></li>
+              <li>
+                <a href="" (click)="logOut()">Log Out</a>
+              </li>
 
             </ul>
 
           </li>
+
+          <li class="dropdown submenu" *ngIf="user">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" *ngIf="user" class="usertxt"><img class="fbimg" src="{{ user.photoUrl }}"><i class="fa fa-angle-down" aria-hidden="true"></i></a>
+            <ul class="dropdown-menu">
+              <li><a href="#"> {{user.name}}</a></li>
+              <li>
+                <a href="" (click)="signOut()">Log Out</a>
+              </li>
+
+
+            </ul>
+
+          </li>
+
+
 
           <li><a routerLink="cart"><i class="fa fa-shopping-cart" aria-hidden="true"></i><span>{{drinkService.calculateLocalCartProdCount()}}</span></a></li>
         </ul>
@@ -148,7 +143,7 @@
         <div class="col-md-3">
           <aside class="f_widget about_widget">
             <div class="f_w_title">
-              <h4>ABOUT RedCayenne</h4>
+              <h4>Cafe</h4>
             </div>
             <p>Lorem ipsum dolor sit amet, consectur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris ut.</p>
             <ul>

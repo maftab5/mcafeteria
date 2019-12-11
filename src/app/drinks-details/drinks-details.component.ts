@@ -32,5 +32,11 @@ export class DrinksDetailsComponent implements OnInit {
       });
 
   }
+  // add to cart
+  addToCart(drink: Drinks){
+    this.drinkService.addToCart(drink);
+
+  }
+
 
 }
