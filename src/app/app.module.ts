@@ -56,12 +56,12 @@ import { OrderhistoryComponent } from './orderhistory/orderhistory.component';
 // import {config} from "rxjs";
 
 const facebook_oauth_client_id: string = '1083758722015983';
-let config = new AuthServiceConfig([
-  {
-    id: FacebookLoginProvider.PROVIDER_ID,
-    provider: new FacebookLoginProvider(facebook_oauth_client_id)
-  }
-]);
+// let config = new AuthServiceConfig([
+//   {
+//     id: FacebookLoginProvider.PROVIDER_ID,
+//     provider: new FacebookLoginProvider(facebook_oauth_client_id)
+//   }
+// ]);
 @NgModule({
   declarations: [
 
