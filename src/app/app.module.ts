@@ -104,7 +104,7 @@ const facebook_oauth_client_id: string = '1083758722015983';
     HttpModule,
     NgbModule,
     NgxPayPalModule,
-    SocialLoginModule.initialize(config),
+//     SocialLoginModule.initialize(config),
 
     RouterModule.forRoot([
       {
