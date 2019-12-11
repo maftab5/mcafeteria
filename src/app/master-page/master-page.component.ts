@@ -26,7 +26,7 @@ export class MasterPageComponent implements OnInit {
     private modalService : ModalService,
     private historyService : HistoryService,
     public drinkService: DrinksService,
-    private _socioAuthServ: AuthService,
+//     private _socioAuthServ: AuthService,
      private activatedRoute: ActivatedRoute
   ) { }
 
@@ -40,22 +40,22 @@ export class MasterPageComponent implements OnInit {
 //for facebook login
 // Method to sign in with facebook.
 signIn(platform: string): void {
-  platform = FacebookLoginProvider.PROVIDER_ID;
-  this._socioAuthServ.signIn(platform).then(
-  (response) => {
-    console.log(platform + " logged in user data is= ", response);
-    localStorage.setItem('fbID',JSON.stringify(response.email));
-    var fb = JSON.parse(localStorage.getItem('fbID'));
-    console.log(fb);
-    this.user = response;
-  }
-);
+//   platform = FacebookLoginProvider.PROVIDER_ID;
+//   this._socioAuthServ.signIn(platform).then(
+//   (response) => {
+//     console.log(platform + " logged in user data is= ", response);
+//     localStorage.setItem('fbID',JSON.stringify(response.email));
+//     var fb = JSON.parse(localStorage.getItem('fbID'));
+//     console.log(fb);
+//     this.user = response;
+//   }
+// );
 }
   // // Method to log out.
   signOut(): void {
-    this._socioAuthServ.signOut();
-    this.user = null;
-    console.log('User signed out.');
+//     this._socioAuthServ.signOut();
+//     this.user = null;
+//     console.log('User signed out.');
   }
 
 
