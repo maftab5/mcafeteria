@@ -50,7 +50,7 @@ import { CalculateComponent } from './calculate/calculate.component';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { PaymentComponent } from './payment/payment.component';
 import {NgxPayPalModule} from "ngx-paypal";
-import { SocialLoginModule, AuthServiceConfig, FacebookLoginProvider } from 'angularx-social-login';
+// import { SocialLoginModule, AuthServiceConfig, FacebookLoginProvider } from 'angularx-social-login';
 import { ForgetpasswordComponent } from './forgetpassword/forgetpassword.component';
 import { OrderhistoryComponent } from './orderhistory/orderhistory.component';
 // import {config} from "rxjs";
