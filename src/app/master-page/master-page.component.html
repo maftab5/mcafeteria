@@ -73,7 +73,7 @@
 <!--          <button (click)="signOut();">Sign out</button><br /><br />-->
 
           <li *ngIf="!isLoggedIn()&& !user"><a href="#"  (click)="openModal('custom-modal-1')">Log In /</a></li>
-          <li *ngIf="!user && !isLoggedIn()"><a href="#"  (click)="signIn('Facebook');" > Facebook Login</a></li>
+<!--           <li *ngIf="!user && !isLoggedIn()"><a href="#"  (click)="signIn('Facebook');" > Facebook Login</a></li> -->
           <li class="dropdown submenu" *ngIf="isLoggedIn()">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" *ngIf="isLoggedIn()" class="usertxt">
               <img class="fbimg" src="../../assets/images/user.jpg">
@@ -91,7 +91,7 @@
 
           </li>
 
-          <li class="dropdown submenu" *ngIf="user">
+<!--           <li class="dropdown submenu" *ngIf="user">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" *ngIf="user" class="usertxt"><img class="fbimg" src="{{ user.photoUrl }}"><i class="fa fa-angle-down" aria-hidden="true"></i></a>
             <ul class="dropdown-menu">
               <li><a href="#"> {{user.name}}</a></li>
@@ -102,7 +102,7 @@
 
             </ul>
 
-          </li>
+          </li> -->
 
 
 
