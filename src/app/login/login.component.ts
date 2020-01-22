@@ -3,7 +3,7 @@ import {Router, ActivatedRoute} from "@angular/router";
 import {AuthenticationService} from "../authentication.service";
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {MustMatch} from "../customLib/confirmPassword";
-import {AuthService, FacebookLoginProvider} from "angularx-social-login";
+// import {AuthService, FacebookLoginProvider} from "angularx-social-login";
 
 
 @Component({
@@ -29,8 +29,7 @@ public credentials = {
   constructor(private router: Router,
               private authenticationService: AuthenticationService
               , private formBuilder : FormBuilder,
-              private activatedRoute: ActivatedRoute,
-              private _socioAuthServ: AuthService) {
+              private activatedRoute: ActivatedRoute) {
 
   // for facebook login
 
