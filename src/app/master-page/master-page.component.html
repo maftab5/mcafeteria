@@ -55,14 +55,6 @@
 
 
 
-          <li class="dropdown submenu">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Nutrition <i class="fa fa-angle-down" aria-hidden="true"></i></a>
-            <ul class="dropdown-menu">
-              <li><a href="blog.html">Drinks</a></li>
-              <li><a href="blog-gallery.html">Food</a></li>
-            </ul>
-          </li>
-
 <!--          <div *ngIf="user">-->
 <!--            <img src="{{ user.photoUrl }}">-->
 <!--            <h4>{{ user.name }}</h4>-->
@@ -72,7 +64,7 @@
 <!--          <button (click)="signIn('Facebook');">Sign in with Facebook</button><br /><br />-->
 <!--          <button (click)="signOut();">Sign out</button><br /><br />-->
 
-          <li *ngIf="!isLoggedIn()&& !user"><a href="#"  (click)="openModal('custom-modal-1')">Log In /</a></li>
+          <li *ngIf="!isLoggedIn()"><a href="#"  (click)="openModal('custom-modal-1')">Log In /</a></li>
 <!--           <li *ngIf="!user && !isLoggedIn()"><a href="#"  (click)="signIn('Facebook');" > Facebook Login</a></li> -->
           <li class="dropdown submenu" *ngIf="isLoggedIn()">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" *ngIf="isLoggedIn()" class="usertxt">
@@ -161,42 +153,14 @@
             </div>
             <p>Have questions, comments or just want to say hello:</p>
             <ul>
-              <li><a href="#"><i class="fa fa-envelope"></i>backpiper.com@gmail.com</a></li>
-              <li><a href="#"><i class="fa fa-phone"></i>+88 01911 854 378</a></li>
-              <li><a href="#"><i class="fa fa-map-marker"></i>5001 E. Colorado Blvd. Suite 820,<br /> Pasadena, CA 91106</a></li>
+              <li><a href="#"><i class="fa fa-envelope"></i>aftab1234011@gmail.com</a></li>
+              <li><a href="#"><i class="fa fa-phone"></i>+1 437 994 4453</a></li>
+              <li><a href="#"><i class="fa fa-map-marker"></i>Kitchener,<br /> Ontario, CA</a></li>
             </ul>
           </aside>
         </div>
-        <div class="col-md-3">
-          <aside class="f_widget twitter_widget">
-            <div class="f_w_title">
-              <h4>Twitter Feed</h4>
-            </div>
-            <ul>
-              <li>
-                <a href="#">@_sumonrahman:</a> Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat.
-              </li>
-              <li>
-                <a href="#">@_sumonrahman:</a> Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat.
-              </li>
-            </ul>
-          </aside>
-        </div>
-        <div class="col-md-3">
-          <aside class="f_widget gallery_widget">
-            <div class="f_w_title">
-              <h4>Gallery On Flickr</h4>
-            </div>
-            <ul>
-              <li><a href="#"><img src="assets/img/gallery/f-w-gallery/f-w-gallery-1.jpg" alt=""><i class="fa fa-search"></i></a></li>
-              <li><a href="#"><img src="assets/img/gallery/f-w-gallery/f-w-gallery-2.jpg" alt=""><i class="fa fa-search"></i></a></li>
-              <li><a href="#"><img src="assets/img/gallery/f-w-gallery/f-w-gallery-3.jpg" alt=""><i class="fa fa-search"></i></a></li>
-              <li><a href="#"><img src="assets/img/gallery/f-w-gallery/f-w-gallery-4.jpg" alt=""><i class="fa fa-search"></i></a></li>
-              <li><a href="#"><img src="assets/img/gallery/f-w-gallery/f-w-gallery-5.jpg" alt=""><i class="fa fa-search"></i></a></li>
-              <li><a href="#"><img src="assets/img/gallery/f-w-gallery/f-w-gallery-6.jpg" alt=""><i class="fa fa-search"></i></a></li>
-            </ul>
-          </aside>
-        </div>
+        
+        
       </div>
     </div>
   </div>
