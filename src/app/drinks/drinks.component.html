@@ -3,42 +3,17 @@
   <h1 class="text-center text-primary"><strong>Drinks and Burgers</strong></h1>
   <section class="3u"  *ngFor="let drink of drinks">
 
-<!--  <section *ngIf="drink.category == 'cold drink'">-->
-<!--    <div class="col-lg-4 col-md-4 col-sm-4" style="margin: 70px 40px">-->
-<!--      <div class="card" >-->
-<!--        <img class="card-img-top" src="{{drink.image}}" alt="Card image cap" height="250" width="250">-->
-<!--        <div class="card-body">-->
-<!--          <p class="card-text">First Name : {{drink.name}}</p>-->
-<!--          <p class="card-text">Description : {{drink.description}}</p>-->
-<!--          <p class="card-text">Last Name : {{drink.price}}</p>-->
-
-<!--          <button class="offset-md-1 col-md-5 btn btn-success" routerLink="/drink/{{drink._id}}">Details</button>-->
-<!--          <button class="offset-md-1 col-md-5 btn btn-success" routerLink="/updateDrink/{{drink._id}}">Update</button>-->
-<!--          <div class="offset-md-1 col-md-5 btn btn-success" (click)="deleteDrink(drink._id)">Delete</div><br/><br/>-->
-<!--          &lt;!&ndash;          <button class="offset-md-1 col-md-5 btn btn-success" routerLink="/userupdate/{{siteuser._id}}" style="margin-right: 10px">Update</button>&ndash;&gt;-->
-<!--          &lt;!&ndash;          <div class="offset-md-1 col-md-5 btn btn-success" (click)="userDelete(siteuser._id)">Delete</div><br/><br/>&ndash;&gt;-->
-<!--        </div>-->
-<!--      </div>-->
-
-<!--    </div>-->
-<!--  </section>-->
-
-
-
-<!--    <section *ngIf="drink.category == 'burgers'">-->
-      <div class="col-lg-4 col-md-4 col-sm-4" style="margin: 70px 40px">
+      <div class="col-lg-3 col-md-3 col-sm-3" style="margin: 70px 40px;background-color:#fff">
         <div class="card" >
           <img class="card-img-top" src="{{drink.image}}" alt="Card image cap" height="250" width="250">
           <div class="card-body">
             <p class="card-text">Name : {{drink.name}}</p>
             <p class="card-text">Description : {{drink.description}}</p>
-            <p class="card-text">Price : {{drink.price}}</p>
+            <p class="card-text">Price : {{drink.price | currency}}</p>
 
             <button class="offset-md-1 col-md-5 btn btn-success" (click)="addToCart(drink)">Add to Cart</button>
             <button class="offset-md-1 col-md-5 btn btn-success" routerLink="/drink/{{drink._id}}">Details</button>
 
-            <!--          <button class="offset-md-1 col-md-5 btn btn-success" routerLink="/userupdate/{{siteuser._id}}" style="margin-right: 10px">Update</button>-->
-            <!--          <div class="offset-md-1 col-md-5 btn btn-success" (click)="userDelete(siteuser._id)">Delete</div><br/><br/>-->
           </div>
         </div>
 
