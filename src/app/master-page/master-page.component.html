@@ -64,7 +64,7 @@
 <!--          <button (click)="signIn('Facebook');">Sign in with Facebook</button><br /><br />-->
 <!--          <button (click)="signOut();">Sign out</button><br /><br />-->
 
-          <li *ngIf="!isLoggedIn()"><a href="#"  (click)="openModal('custom-modal-1')">Log In /</a></li>
+          <li *ngIf="!isLoggedIn()"><a href="#"  (click)="openModal('custom-modal-1')">Log In </a></li>
 <!--           <li *ngIf="!user && !isLoggedIn()"><a href="#"  (click)="signIn('Facebook');" > Facebook Login</a></li> -->
           <li class="dropdown submenu" *ngIf="isLoggedIn()">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" *ngIf="isLoggedIn()" class="usertxt">
