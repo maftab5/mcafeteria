@@ -39,7 +39,7 @@ export class MasterPageComponent implements OnInit {
 
 //for facebook login
 // Method to sign in with facebook.
-signIn(platform: string): void {
+//signIn(platform: string): void {
 //   platform = FacebookLoginProvider.PROVIDER_ID;
 //   this._socioAuthServ.signIn(platform).then(
 //   (response) => {
@@ -50,13 +50,13 @@ signIn(platform: string): void {
 //     this.user = response;
 //   }
 // );
-}
+//}
   // // Method to log out.
-  signOut(): void {
+  //signOut(): void {
 //     this._socioAuthServ.signOut();
 //     this.user = null;
 //     console.log('User signed out.');
-  }
+ // }
 
 
   public logOut(): void{
