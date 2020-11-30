@@ -1,0 +1,206 @@
+<div class="class-col--lg12 col-md-12 loading fa-3x"*ngIf="loading" >
+  <i class="fa fa-3x fa-spinner" aria-hidden="true"></i>
+Loading...
+  </div>
+<div style="text-align:center;max-height: 700px;overflow: hidden !important;">
+
+  <owl-carousel-o [options]="customOptions">
+    <ng-template carouselSlide >
+      <div class="slide">
+        
+      <img src="assets/images/banner4.jpg" alt = "This is first image">
+      
+      <div class="carousel-caption">
+        <h3>exclusive</h3>
+        <h1><strong>COFFEE CAFE</strong></h1>
+      </div>  
+    
+    </div>
+    </ng-template>
+    
+    <ng-template carouselSlide>
+      <div class="slide">
+        
+      <img src="assets/images/banner3.png">
+      
+      <div class="carousel-caption">
+        <h3>find your</h3>
+        <h1><strong>BEST CAFE DEALS</strong></h1>
+      </div>    
+    </div>
+    </ng-template>
+    <ng-template carouselSlide>
+      <div class="slide">
+        
+      <img src="assets/images/banner1.jpg">
+      <div class="carousel-caption">
+        <h3>find your</h3>
+        <h1><strong>BEST CAFE DEALS</strong></h1>
+      </div>  
+    </div>
+    </ng-template>
+  </owl-carousel-o>
+
+</div>
+
+<div class="container">
+  <div class="row" >
+    <div class="col-md-8 col-md-offset-2 search-div">
+      <div class="col-lg-5 col-md-5 col-sm-6 col-xs-6">
+        <input type="text" placeholder="search food" class="form-control search-field"/>
+        
+      </div>
+      <div class="col-lg-6 col-md-6 col-sm-5 col-xs-5">
+        <input type="text" placeholder="search category" class="form-control search-field"/>
+        
+      </div>
+      <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 bg-white">
+        <div class="" >
+          <i class="fa fa-search fa-2x"></i>
+        </div>
+        
+      </div>
+      <!-- <div class="col-md-2">
+        <input class="btn btn-success" type="submit" value="Search"/>
+      </div> -->
+      
+      
+    </div>
+    
+  </div>
+
+<div class="container">
+  
+<section class="storySection">
+  
+  <div class="row">
+    <div class="col-lg-6 col-md-6 text-center storyTextSection">
+      <h4 class="h4text">Discover</h4>
+      <h2 class="h2text"><strong>OUR STORY</strong> </h2>
+      <p>Online Cafe was established in 2018 with the purpose of providing excellent online fast food service to the customers. It is located in the middle of the downtown Toronto.It is located in the middle of the downtown Toronto.It is located in the middle of the downtown Toronto.</p>
+      <button class="btn btn-success">READ MORE</button>
+
+      
+
+    </div>
+
+    <div class="col-lg-6 col-md-6 storyImageSection">
+      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 storyImage">
+        <img src="assets/images/food/Bakery/CakesPies/StrawberryCakePop.jpg" alt="Strawberry Cake" class="img-fluid">
+      </div>
+
+      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 storyImage">
+        <img src="assets/images/food/Bakery/CakesPies/StrawberryCakePop.jpg" alt="Chocolate Cake" class="img-fluid">
+      </div>
+
+    </div>
+    
+  </div>
+
+
+</section>
+
+<section class="foodsSection">
+  
+  <div class="row text-center">
+    <h4 class="h4text">Enjoy</h4>
+    <h2 class="h2text">HOT DEALS</h2>
+<br/>
+    <div class="col-lg-12" *ngFor="let drink of drinks.slice(2,6)">
+      <div class="col-lg-3 col-md-3 col-sm-4 col-xs-6" >
+        <div class="card" style="background-color:white">
+          <img class="img-fluid" src="{{drink.image}}" alt="Card image cap" class="img-fluid">
+          <div class="card-body">
+            <p class="card-text">
+              <a routerLink="/drink/{{drink._id}}">
+              <strong>{{drink.name}}</strong>
+            </a>
+            </p>
+            <p class="card-text">{{drink.price | currency}}</p>
+            <button class="btn btn-success" (click)="addToCart(drink)">Add to Cart</button>
+            <!-- <button class="btn btn-success" routerLink="/drink/{{drink._id}}">Details</button> -->
+  
+          </div>
+        </div>
+  
+      </div>
+    </div>
+  </div>
+  
+  </section>
+
+  <section class="menuSection">
+    <div class="">
+      <div class="row">
+        <div class="col-md-6 menuImageSection">
+          <div class="col-md-12">
+          
+            <div class="col-md-6 col-sm-6 col-xs-6 menuImage">
+              <img src="assets/images/food/Bakery/CakesPies/StrawberryCakePop1.jpg" alt="hot Chocolate" class="img-fluid"/>
+            </div>
+            <div class="col-md-6 col-sm-6 col-xs-6 menuImage">
+              <img src="assets/images/food/Bakery/CakesPies/ChocolateCakePop.jpeg" alt="" class="img-fluid"/>
+            </div>
+          </div>
+    
+         
+    
+        </div>
+    
+        <div class="col-md-6 text-center discoverMenuSection">
+          <h4 class="h4text">Discover</h4>
+          <h2 class="h2text"><strong>Our Menu</strong></h2>
+         
+          <p>Online Cafe has variety of foods and drinks to choose from. It's foods and drinks are known for the taste and quality.Online Cafe has variety of foods and drinks to choose from. It's foods and drinks are known for the taste and quality</p>
+          <button class="btn btn-success">VIEW FULL MENU</button>
+    
+        </div>
+    
+      </div>
+    </div>
+    
+    </section>
+    
+
+    <section class="subscribeSection">
+
+
+      <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                
+                <h2 class="h4text">Subscribe to Newsletter</h2>
+                <p class="subscribtionText">Subscribe to receive our weekly promotion every month</p>
+                <div class="col-md-12">
+                  <div class="col-lg-6 col-lg-offset-3 col-md-6 col-md-offset-3 col-sm-6 col-sm-offset-3 col-xs-8">
+                    <input type="text" class="form-control" placeholder="Enter Your Email" name="youremail" id="youremail">
+                  </div>
+                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                      <button class="btn btn-success" type="button" >subscribe</button>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+      <!-- <div class="row">
+      <div class="text-center" >
+        <h2>Subscribe to Newsletter</h2>
+        <p>Subscribe to get our bi-weekly promotion coupons every month</p>
+        <form [formGroup]="subscribeForm" (ngSubmit) = "onSubmit()">
+          <div class="form-group">
+        <input type="text" formControlName="email" placeholder="enter your email" class="col-md-5 col-lg-5 col-sm-5 col-xs-5 form-control"/>
+        <button class="btn btn-success">Subscribe</button>
+      </div>
+      </form>
+      </div>
+    </div> -->
+    </section>
+
+
+</div>
+ 
+</div>

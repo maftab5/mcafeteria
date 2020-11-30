@@ -1,0 +1,157 @@
+<header class="main_menu_area">
+  <nav class="navbar navbar-transparent" id="navbar">
+    <div class="container">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" [routerLink]="['/']">Online Cafe</a>
+      </div>
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav navbar-right">
+          <li class=""><a [routerLink]="['/']" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:
+            true}">Home</a></li>
+          <li class=""><a [routerLink]="['/drink']" [routerLinkActive]="['active']">Menu</a></li>
+          <li class=""><a [routerLink]="['/contact']" [routerLinkActive]="['active']">Contact</a></li>
+          <li class=""><a [routerLink]="['/about']" [routerLinkActive]="['active']">About Us</a></li>
+
+<!--          <div *ngIf="user">-->
+<!--            <img src="{{ user.photoUrl }}">-->
+<!--            <h4>{{ user.name }}</h4>-->
+<!--            <p>{{ user.email }}</p>-->
+<!--          </div>-->
+
+<!--          <button (click)="signIn('Facebook');">Sign in with Facebook</button><br /><br />-->
+<!--          <button (click)="signOut();">Sign out</button><br /><br />-->
+
+          <li *ngIf="!isLoggedIn()"><a [routerLink]="['/login']"  [routerLinkActive]="['active']">Log In </a></li>
+<!--           <li *ngIf="!user && !isLoggedIn()"><a href="#"  (click)="signIn('Facebook');" > Facebook Login</a></li> -->
+          <li class="dropdown submenu" *ngIf="isLoggedIn()">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" *ngIf="isLoggedIn()" class="usertxt">
+              <img class="fbimg" src="../../assets/images/user.jpg">
+             <i class="fa fa-angle-down" aria-hidden="true"></i></a>
+
+            <ul class="dropdown-menu">
+              <li> <a href="#"> {{getUsername()}}</a></li>
+              <li><a routerLink="/userupdate/{{getUserId()}}">Profile</a></li>
+              <li><a routerLink="admin">admin</a></li>
+              <li>
+                <a href="" (click)="logOut()">Log Out</a>
+              </li>
+
+            </ul>
+
+          </li>
+
+
+          <li><a routerLink="cart"><i class="fa fa-shopping-cart" aria-hidden="true"></i><span>{{drinkService.calculateLocalCartProdCount()}}</span></a></li>
+        </ul>
+      </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+  </nav>
+</header>
+
+
+<!-- for login and signup modal -->
+
+
+<jw-modal id="custom-modal-1" class="darken-pseudo" close-on-success="true">
+
+  <mat-tab-group animationDuration="0ms">
+    <mat-tab label="LOGIN" class="btn-success"><app-login></app-login></mat-tab>
+    <mat-tab label="SIGNUP" class="btn-success"><app-user-create></app-user-create></mat-tab>
+
+  </mat-tab-group>
+
+<!--  <button (click)="closeModal('custom-modal-1');">Close</button>-->
+</jw-modal>
+
+
+
+<!-- //contents of other pages -->
+<div class="contentdiv">
+  <router-outlet></router-outlet>
+</div>
+
+<footer class="footer_area">
+  <div class="footer_widget_area">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3">
+          <aside>
+            <div>
+              <h2 class="h4text">Online Cafe</h2>
+              <p>Welcome to online cafe. You can enjoy your favourite foods with the mixture of taste and health.</p>
+            </div>
+           
+          </aside>
+        </div>
+        <div class="col-md-3">
+          <aside class="f_widget contact_widget">
+            <div class="f_w_title">
+              <h3 class="h4text">Opening Time</h3>
+              <p>Monday - Thursday 11 AM - 10 PM</p>
+              <p>Friday - Saturday 11 AM - 12 AM</p>
+              <p>Sunday 2 PM - 9 PM</p>
+            </div>
+            
+          </aside>
+        </div>
+        
+        <div class="col-md-3">
+          <address class="f_widget contact_widget">
+            
+              <h4 class="h4text">Contact Us</h4>
+              <p>204 Osler St, Toronto</p>
+              <p>onlinecafe@gmail.com</p>
+              <p>+1 (333) 455 3345</p>
+            
+            
+          </address>
+        </div>
+
+        <div class="col-md-2">
+          <aside>
+            <h4 class="h4text">Follow Us</h4>
+            <div class="socialLinks">
+              <a href="https://www.facebook.com" target="_blank"><i class="fa fa-facebook"></i> &nbsp;&nbsp;Facebook</a>
+            </div>
+             
+             <div class="socialLinks">
+              <a href="https://www.linkedin.com/in/mohammad-aftab-91240a115/" target="_blank"><i class="fa fa-linkedin"></i>&nbsp;&nbsp; LinkedIn</a>
+             </div>
+
+             <div class="socialLinks">
+              <a href="https://www.youtube.com" target="_blank"><i class="fa fa-youtube"></i> &nbsp;&nbsp; YouTube</a>
+             </div>
+             <div class="socialLinks">
+              <a href="https://www.instagram.com" target="_blank"><i class="fa fa-instagram"></i>&nbsp;&nbsp; Instagram</a>
+            </div>
+             
+             
+           
+          </aside>
+        
+      </div>
+    </div>
+  </div>
+  <div class="copy_right_area">
+    <div class="container">
+      <div class="text-center">
+        <h5><p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+          Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | Mohammad Aftab
+          
+        </p></h5>
+      </div>
+
+    </div>
+  </div>
+  </div>
+</footer>
+

@@ -1,0 +1,65 @@
+/* button{
+  margin: 10px;
+} */
+/* .details {
+  font-size: 35px;
+  -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+  box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+} */
+
+
+
+.slide{
+  background-color: #000000;
+  overflow: hidden;
+  text-align:center;
+  max-height: 300px;
+  
+}
+.slide img{
+  opacity: 0.5;
+}
+.menuHeading{
+  font-family:'Great Vibes', cursive;
+  font-weight: 600;
+  ;
+}
+.detailsText {
+  text-align: center;
+  position: absolute;
+  bottom: 50%;
+  text-align: center !important;
+  text-transform: capitalize;
+  z-index: 99;
+  color: white;
+  text-shadow: 0 1px 2px rgba(0,0,0,.6);
+}
+
+.menuDiv{
+  margin: 8% auto !important;
+  width: 80%;
+}
+
+.caltegoryBtn{
+  color: #ffffff;
+  text-align: center;
+  text-transform: uppercase;
+  background-color: green;
+  margin: 1%;
+  padding: 8%;
+  
+}
+.caltegoryBtn:hover{
+  cursor: pointer;
+}
+.caltegoryBtn.active{
+  
+  border-left: 12px solid yellowgreen;
+}
+.categorySearchLabel{
+  font-family: 'Great Vibes', cursive;
+  font-size: 2em;
+  /* text-align: center; */
+  font-weight: 600;
+}

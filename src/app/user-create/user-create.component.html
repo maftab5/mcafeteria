@@ -1,0 +1,86 @@
+<div class="row signupDiv">
+  <form [formGroup]="registerForm" (ngSubmit) = "onSubmit()">
+    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+      <div class="form-group">
+        
+        <input type="text" formControlName="firstName" placeholder="Your Name" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }" id="firstName" autofocus/>
+        <div *ngIf="submitted && f.firstName.errors" class="invalid-feedback">
+          <div *ngIf="f.firstName.errors.required" class="text-danger">First Name is required</div>
+        </div>
+      </div>
+
+      <div class="form-group">
+       
+        <input type="text" formControlName="lastName" placeholder="your last name" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.lastName.errors }" id="lastName"/>
+        <div *ngIf="submitted && f.lastName.errors" class="invalid-feedback">
+          <div *ngIf="f.lastName.errors.required" class="text-danger">Last Name is required</div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        
+        <input type="text" formControlName="email" placeholder="youremail@gmail.com" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.email.errors }" id="email"/>
+        <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+          <div *ngIf="f.email.errors.required" class="text-danger">Email is required</div>
+          <div *ngIf="f.email.errors.email" class="text-danger">Email should be a valid </div>
+        </div>
+      </div>
+  
+     
+
+    </div>
+
+    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+  
+      <div class="form-group">
+        
+        <input type="password" formControlName="password" placeholder="password" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" id="password"/>
+        <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+          <div *ngIf="f.password.errors.required" class="text-danger">Password is required</div>
+          <div *ngIf="f.password.errors.minlength" class="text-danger">Password must be at least 4 character long</div>
+  
+        </div>
+      </div>
+
+      <div class="form-group">
+       
+        <input type="password" formControlName="confirmPassword" class="form-control" placeholder="confirm password" [ngClass]="{ 'is-invalid': submitted && f.confirmPassword.errors }" />
+        <div *ngIf="submitted && f.confirmPassword.errors" class="invalid-feedback">
+          <div *ngIf="f.confirmPassword.errors.required" class="text-danger">Confirm Password is required</div>
+          <div *ngIf="f.confirmPassword.errors.mustMatch" class="text-danger">Passwords must match</div>
+        </div>
+      </div>
+  
+      <div class="form-group">
+  
+        
+          <input matInput [matDatepicker] = "picker" type="text" formControlName="dob" placeholder="12/20/2000" class="form-control col-lg-9 col-md-9 col-sm-11 col-xs-11" [ngClass]="{ 'is-invalid': submitted && f.dob.errors }" id="dob" (click)="picker.open()" (focus)="picker.open()">
+
+          <mat-datepicker #picker></mat-datepicker>
+
+      <div *ngIf="submitted && f.dob.errors" class="invalid-feedback">
+        <div *ngIf="f.dob.errors.required">Date of birth is required</div>
+      </div>
+    </div>
+    
+
+    </div>
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+      
+        
+        <button class="btn btn-success" type="submit">Sign Up</button>
+      
+    </div>
+
+    
+    
+
+
+   
+
+
+
+
+  </form>
+</div>
+

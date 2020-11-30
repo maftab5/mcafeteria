@@ -1,0 +1,77 @@
+
+<br>
+<div class="container">
+  <div class="row">
+    <!-- List of Products -->
+    <div class="col-lg-9">
+      <div class="row">
+        <div class="col-lg-4" *ngFor="let product of cartProducts">
+          <div class="item">
+            <div class=" mb-r">
+
+              <!--Card-->
+              <div class="card card-cascade wider">
+
+                <!--Card image-->
+
+
+                  <div class="view overlay hm-white-slight">
+                    <img [src]="product.image" class="img-fluid" alt="" width="260px" height="240px">
+                    <a>
+                      <div class="mask waves-effect waves-light" mdbRippleRadius></div>
+                    </a>
+                  </div>
+
+
+                <!--/.Card image-->
+
+                <!--Card content-->
+                <div class="card-body text-center no-padding">
+                  <!--Category & Title-->
+                  <a class="text-muted">
+                    <h5>{{ product.category }}</h5>
+                  </a>
+                  <h5 class="card-title">
+                    <strong>
+                     {{ product.name }}
+                    </strong>
+                  </h5>
+
+                  <!--Description-->
+                  <p class="card-text">{{ product.description }}
+                  </p>
+
+                  <!--Card footer-->
+                  <div class="card-footer">
+                    <span class="pull-left"> {{ product.price | currency}}</span>
+                    <span class="pull-right">
+
+                      <a placement="top" mdbTooltip="Quick Look" container="body" routerLink="/drink/{{product._id}}">
+                        <i class="fa fa-eye"></i>
+                      </a>
+                      <a placement="top" mdbTooltip="Remove Product" container="body" (click)="removeCartProduct(product)">
+                        <i class="fa fa-trash"></i>
+                      </a>
+                    </span>
+                  </div>
+
+                </div>
+                <!--/.Card content-->
+
+              </div>
+              <!--/.Card-->
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div class="col-lg-3">
+      <app-calculate [products]="cartProducts"></app-calculate>
+    </div>
+  </div>
+</div>
+<!--<div class="container" *ngIf="cartProducts.length === 0">-->
+<!--  <app-no-products-found [title]="messageTitle" [description]="messageDescription"></app-no-products-found>-->
+<!--</div>-->

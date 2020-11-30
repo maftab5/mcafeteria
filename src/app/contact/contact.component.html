@@ -1,0 +1,70 @@
+<div class="row">
+  <div class="slide" style="text-align:center;max-height: 300px;overflow: hidden !important;">
+    <img src="assets/images/banner2.jpg" alt = "food details">
+    <div class="col-md-12 text-center detailsText ">
+      <h1 class="detailHeading">Contact</h1>
+      <h5><strong>Contact Us</strong></h5>
+    </div> 
+  </div>
+
+  <div class="col-md-12 col-lg-12 contactDiv">
+    <form [formGroup]="contactForm" (ngSubmit) = "onSubmit()">
+      <div class="col-md-12">
+        <h3 style="font-weight: bold">Get In Touch</h3><br/>
+      </div>
+      
+      <br/>
+  
+      <div class="col-md-5 col-lg-5 col-sm-5 col-xs-5 form-group">
+        
+        <input type="text" formControlName="name" class="form-control" placeholder="Name" [ngClass]="{ 'is-invalid': submitted && f.name.errors }" id="name" autofocus/>
+        <div *ngIf="submitted && f.name.errors" class="invalid-feedback">
+          <div *ngIf="f.name.errors.required" class="text-danger">Name is required</div>
+        </div>
+      </div>
+  
+  
+      <div class="col-md-5 col-lg-5 col-sm-5 col-xs-5 form-group">
+        
+        <input type="text" formControlName="email" class="form-control" placeholder="youremail@gmail.com" [ngClass]="{ 'is-invalid': submitted && f.email.errors }" id="email"/>
+        <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+          <div *ngIf="f.email.errors.required" class="text-danger">Email is required</div>
+        </div>
+      </div>
+  
+      <div class="col-md-10 col-lg-10 col-sm-10 col-xs-10 form-group">
+       
+        <input type="text" formControlName="address" class="form-control" placeholder="Toronto" [ngClass]="{ 'is-invalid': submitted && f.address.errors }" id="address"/>
+        <div *ngIf="submitted && f.address.errors" class="invalid-feedback">
+          <div *ngIf="f.address.errors.required" class="text-danger">Address is required</div>
+  
+        </div>
+      </div>
+  
+      <div class="col-md-10 col-lg-10 col-sm-10 col-xs-10 form-group">
+        
+        <textarea type="text" formControlName="comment" placeholder="write your message here" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.comment.errors }" id="comment" rows="5"></textarea>
+
+        <div *ngIf="submitted && f.comment.errors" class="invalid-feedback">
+          <div *ngIf="f.comment.errors.required" class="text-danger">Comment is required</div>
+  
+        </div>
+      </div>
+  
+  
+      <div class="col-lg-12 col-md-12 col-xs-12 col-sm-12 form-group">
+        
+        <button class="btn btn-success" type="submit">Send Message</button>
+      </div>
+  
+  
+  
+  
+  
+    </form>
+  </div>
+
+</div>
+
+
+

@@ -1,0 +1,101 @@
+<div class="row">
+  <div class="col-lg-2 col-md-2 col-sm-2">
+    <div class="sidebar left ">
+      <ul class="list-sidebar bg-defoult">
+        <!--<li class="nav-header "> <span> <img alt="image" class="img-circle" src="http://placehold.it/150x150"> </span>
+          <ul class="dropdown-menu" aria-labelledby="dropdownMenu4">
+            <li><a href="#">Regular link</a></li>
+            <li class="disabled"><a href="#">Disabled link</a></li>
+            <li><a href="#">Another link</a></li>
+          </ul> -->
+        <!--    </li>-->
+        <li> <a href="#"><i class="fa fa-dashboard"></i> <span class="nav-label">Dashboard</span></a> </li>
+        <li> <a href="#" data-toggle="collapse" data-target="#drinks" class="collapsed active" > <i class="fa fa-coffee"></i> <span class="nav-label"> Drinks </span> <span class="fa fa-chevron-left pull-right"></span> </a>
+          <ul class="sub-menu collapse" id="drinks">
+            <li class="active"><a href="#">Hot Drinks</a></li>
+            <li class="active"><a routerLink="/adddrinks">Add Drinks</a></li>
+            <li><a href="#">Cold Drinks</a></li>
+
+          </ul>
+        </li>
+
+        <li> <a href="#" data-toggle="collapse" data-target="#products" class="collapsed active" > <i class="fa fa-bar-chart-o"></i> <span class="nav-label">Bakery</span> <span class="fa fa-chevron-left pull-right"></span> </a>
+          <ul class="sub-menu collapse" id="products">
+            <li class="active"><a href="#">Bagels</a></li>
+            <li><a href="#">Cakes & Pies</a></li>
+
+          </ul>
+        </li>
+
+        <li> <a href="#" data-toggle="collapse" data-target="#tables" class="collapsed active" ><i class="fa fa-table"></i> <span class="nav-label">Burgers</span><span class="fa fa-chevron-left pull-right"></span></a>
+          <ul  class="sub-menu collapse" id="tables" >
+            <li><a href=""> Burger1</a></li>
+            <li><a href=""> Burger2</a></li>
+            <li><a href=""> Burger3</a></li>
+
+          </ul>
+        </li>
+        <li> <a href="#" data-toggle="collapse" data-target="#e-commerce" class="collapsed active" ><i class="fa fa-user-circle"></i> <span class="nav-label">Users</span><span class="fa fa-chevron-left pull-right"></span></a>
+          <ul  class="sub-menu collapse" id="e-commerce" >
+            <li><a routerLink="/signup"> Add User</a></li>
+            <li><a href="/users"> View Users</a></li>
+
+          </ul>
+        </li>
+
+        <li> <a href="#"><i class="fa fa-user-md"></i> <span class="nav-label">Log Out</span></a> </li>
+
+      </ul>
+    </div>
+
+  </div>
+<div class="col-lg-10 col-md-10 col-sm-10">
+
+  <h1 class="breadcrumb">Dashboard</h1>
+
+    <div class="col-lg-4 col-md-4 col-sm-4 adCard">
+      <a routerLink="/users"> <i class="fa fa-4x fa-user-circle-o"></i>
+      <h3>Users</h3>
+
+      </a>
+    </div>
+
+
+  <div class="col-lg-4 col-md-4 col-sm-4 adCard">
+    <a routerLink="/drink">
+    <i class="fa fa-4x fa-coffee"></i>
+    <h3>Drinks</h3>
+    </a>
+  </div>
+
+
+  <div class="col-lg-4 col-md-4 col-sm-4 adCard">
+    <i class="fa fa-4x fa-dollar"></i>
+    <h3>Income</h3>
+
+  </div>
+  <div class="col-lg-4 col-md-4 col-sm-4 adCard">
+    <i class="fa fa-4x fa-line-chart"></i>
+    <h3>Profit</h3>
+
+  </div>
+
+
+
+
+
+</div>
+
+</div>
+
+<script>
+
+  $(document).ready(function(){
+    $('button').click(function(){
+      $('.sidebar').toggleClass('fliph');
+    });
+
+
+
+  });
+</script>

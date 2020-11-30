@@ -1,0 +1,62 @@
+<!--<div *ngIf="error" class="alert alert-danger">{{error}}</div>-->
+<div class="row">
+  <div class="slide" style="text-align:center;max-height: 300px;overflow: hidden !important;">
+    <img src="assets/images/banner2.jpg" alt = "food details">
+    <div class="col-md-12 text-center detailsText ">
+      <h1 class="detailHeading">Login / Sign Up</h1>
+      <h5><strong>Login/Sign Up to get your profile going</strong></h5>
+    </div> 
+  </div>
+  <section class="loginSection">
+    <mat-tab-group animationDuration="10ms">
+      <mat-tab label="LOGIN" class="btn-success">
+        <div class="loginDiv">
+          <form [formGroup]="loginForm" (ngSubmit) = "onLoginSubmit()">
+            <div role="alert" *ngIf="formError" class="alert alert-danger">
+              {{ formError }}
+            </div>
+        
+            <br/>
+        
+        <div class="col-md-12">
+          <div class="form-group col-md-6 col-lg-6">
+              
+            <input type="text" formControlName="email" class="form-control " placeholder="youremail@gmail.com" [ngClass]="{ 'is-invalid': submitted && f.email.errors }" id="email" autofocus/>
+            <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+              <div *ngIf="f.email.errors.required" class="text-danger">Email is required</div>
+              <div *ngIf="f.email.errors.email" class="text-danger">Email should be a valid </div>
+            </div>
+          </div>
+        </div>
+            
+        <div class="col-md-12">
+          <div class="form-group col-md-6 col-lg-6">
+             
+            <input type="password" formControlName="password" placeholder="******" class="form-control"  [ngClass]="{ 'is-invalid': submitted && f.password.errors }" id="password"/>
+            <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+              <div *ngIf="f.password.errors.required" class="text-danger">Password is required</div>
+      
+            </div>
+            <br/>
+            <button class="btn btn-success" type="submit">Login</button>
+          </div>
+        </div>
+           
+        
+            
+            
+        
+            <!-- <a routerLink="/forgetpassword">Forget Password</a> -->
+        
+          </form>
+        </div>
+        
+      </mat-tab>
+      <mat-tab label="SIGNUP" class="btn-success"><app-user-create></app-user-create></mat-tab>
+    
+    </mat-tab-group>
+    
+  </section>
+  </div>
+
+

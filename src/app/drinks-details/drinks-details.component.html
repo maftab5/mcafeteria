@@ -1,0 +1,33 @@
+
+<div class="row">
+  <div class="slide" style="text-align:center;max-height: 300px;overflow: hidden !important;">
+    <img src="assets/images/banner2.jpg" alt = "food details">
+    <div class="col-md-12 text-center detailsText ">
+      <h1 class="detailHeading">Details</h1>
+      <h5><strong>{{drink.name}}</strong></h5>
+    </div> 
+  </div>
+
+
+  <div class="col-lg-12 col-md-12 detailsDiv">
+    <div class="col-lg-5 col-md-5 detailImage">
+      
+        <h2 style="font-weight: 600;">{{drink.name}}</h2>
+        <img class="img-fluid" src="{{drink.image}}" alt="{{drink.name}}" >
+      
+    </div>
+      <div class="col-lg-7 col-md-7 foodDetails">
+        
+        <h3 style="font-weight: 700;">{{drink.price | currency}}</h3>
+        <p><strong>Description :</strong> {{drink.description}}</p>
+        <p><strong>Ingredients :</strong>{{drink.ingredients}}</p>
+        <p><strong>Nutrition :</strong>{{drink.nutrition}}</p>
+  
+        <button class="col-md-3 btn btn-success" (click)="addToCart(drink)">Add to Cart</button><br/><br/>
+    <p><strong>Categories : </strong>{{drink.category}}</p>
+      </div>
+  
+  
+    </div>
+  </div>
+
