@@ -21,11 +21,12 @@ body{
   z-index: 1200;
   font-size: 50px;
   padding: 30%;
-  background-color: lightgray;
+  background-color: white;
+  
 }
 .fa.fa-spinner{
   font-size: 60px;
-  color: greenyellow !important;
+  color: grey !important;
 }
 .container{
   width: 100% !important;
@@ -71,7 +72,11 @@ li > a {
 .navbar-toggle .icon-bar{
   background-color: #ffffff;
 }
+.carouselDiv{
+  text-align:center;overflow: hidden !important;
+}
 .carousel-content, .carousel-caption {
+  height: 900px !important;
   position: absolute;
   bottom: 20%;
   text-align: center;
@@ -238,13 +243,17 @@ li > a {
 
 
 /* common css for other components */
+
+
 .slide{
   background-color: #000000;
-  /* overflow: hidden; */
+  overflow: hidden;
   text-align:center;
-  max-height: 600px;
+  min-height: 400px;
+  max-height: 500px;
   
 }
+
 .slide img{
   opacity: 0.7;
   background-size: cover;

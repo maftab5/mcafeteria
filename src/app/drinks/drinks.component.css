@@ -10,16 +10,6 @@
 
 
 
-.slide{
-  background-color: #000000;
-  overflow: hidden;
-  text-align:center;
-  max-height: 300px;
-  
-}
-.slide img{
-  opacity: 0.5;
-}
 .menuHeading{
   font-family:'Great Vibes', cursive;
   font-weight: 600;

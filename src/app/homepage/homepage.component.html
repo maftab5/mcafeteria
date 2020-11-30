@@ -1,8 +1,8 @@
-<div class="class-col--lg12 col-md-12 loading fa-3x"*ngIf="loading" >
-  <i class="fa fa-3x fa-spinner" aria-hidden="true"></i>
-Loading...
+<div class="class-col-lg-12 col-md-12 loading fa-3x"*ngIf="loading; else loadedContent" >
+  <app-loading></app-loading>
   </div>
-<div style="text-align:center;max-height: 700px;overflow: hidden !important;">
+  <ng-template #loadedContent>
+<div class="carouselDiv">
 
   <owl-carousel-o [options]="customOptions">
     <ng-template carouselSlide >
@@ -60,11 +60,7 @@ Loading...
         </div>
         
       </div>
-      <!-- <div class="col-md-2">
-        <input class="btn btn-success" type="submit" value="Search"/>
-      </div> -->
-      
-      
+     
     </div>
     
   </div>
@@ -106,13 +102,13 @@ Loading...
     <h4 class="h4text">Enjoy</h4>
     <h2 class="h2text">HOT DEALS</h2>
 <br/>
-    <div class="col-lg-12" *ngFor="let drink of drinks.slice(2,6)">
-      <div class="col-lg-3 col-md-3 col-sm-4 col-xs-6" >
+    
+      <div class="col-lg-3 col-md-3 col-sm-4 col-xs-6" *ngFor="let drink of drinks.slice(2,6)">
         <div class="card" style="background-color:white">
           <img class="img-fluid" src="{{drink.image}}" alt="Card image cap" class="img-fluid">
           <div class="card-body">
             <p class="card-text">
-              <a routerLink="/drink/{{drink._id}}">
+              <a routerLink="/menu/{{drink._id}}">
               <strong>{{drink.name}}</strong>
             </a>
             </p>
@@ -124,7 +120,6 @@ Loading...
         </div>
   
       </div>
-    </div>
   </div>
   
   </section>
@@ -185,22 +180,9 @@ Loading...
     </div>
 
 
-
-      <!-- <div class="row">
-      <div class="text-center" >
-        <h2>Subscribe to Newsletter</h2>
-        <p>Subscribe to get our bi-weekly promotion coupons every month</p>
-        <form [formGroup]="subscribeForm" (ngSubmit) = "onSubmit()">
-          <div class="form-group">
-        <input type="text" formControlName="email" placeholder="enter your email" class="col-md-5 col-lg-5 col-sm-5 col-xs-5 form-control"/>
-        <button class="btn btn-success">Subscribe</button>
-      </div>
-      </form>
-      </div>
-    </div> -->
     </section>
 
 
 </div>
- 
-</div>
+ </div>
+</ng-template>

@@ -51,6 +51,8 @@ import {NgxPayPalModule} from "ngx-paypal";
 // import { SocialLoginModule, AuthServiceConfig, FacebookLoginProvider } from 'angularx-social-login';
 import { ForgetpasswordComponent } from './forgetpassword/forgetpassword.component';
 import { OrderhistoryComponent } from './orderhistory/orderhistory.component';
+import { LoadingComponent } from './loading/loading.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 // import {config} from "rxjs";
 
 const facebook_oauth_client_id: string = '1083758722015983';
@@ -85,7 +87,9 @@ const facebook_oauth_client_id: string = '1083758722015983';
     CheckoutComponent,
     PaymentComponent,
     ForgetpasswordComponent,
-    OrderhistoryComponent
+    OrderhistoryComponent,
+    LoadingComponent,
+    NotFoundComponent
   ],
   imports: [
     CarouselModule,
@@ -137,7 +141,7 @@ const facebook_oauth_client_id: string = '1083758722015983';
       },
       // for drinks
       {
-        path: 'drink',
+        path: 'menu',
         component: DrinksComponent
       },
       {
@@ -146,7 +150,7 @@ const facebook_oauth_client_id: string = '1083758722015983';
         canActivate: [AuthGuardService]
       },
       {
-        path: 'drink/:drinkid',
+        path: 'menu/:drinkid',
         component: DrinksDetailsComponent
       },
       {
