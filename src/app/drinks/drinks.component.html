@@ -1,18 +1,18 @@
 <div class="container">
   <div class="row">
-    <div class="class-col--lg12 col-md-12 loading fa-3x"*ngIf="loading" >
-      <i class="fa fa-3x fa-spinner" aria-hidden="true"></i>
-    Loading...
+    <div class="class-col-lg-12 col-md-12 loading fa-3x"*ngIf="loading; else loadedContent" >
+      <app-loading></app-loading>
       </div>
 
-
+   <ng-template #loadedContent>
+    <div class="carouselDiv">
     <div class="slide">
     <img src="assets/images/banner4.jpg" alt = "food details">
     <div class="col-md-12 text-center detailsText ">
       <h1 class="menuHeading">Menu</h1>
       <h5><strong>Available Food menu</strong></h5>
     </div>  
-  </div>
+   </div>
 
 <div class="col-lg-12 menuDiv">
   <div class="col-md-12">
@@ -44,26 +44,17 @@
             </strong>
           </a>
           </p>
-          
           <p class="card-text"><strong>Price</strong> : {{drink.price | currency}}</p>
-
           <button class="btn btn-success" (click)="addToCart(drink)">Add to Cart</button>
-          
-
         </div>
       </div>
 
     </div>
   </section>
 </div>
- 
-
-
 
 </div>
-
-
-
+</ng-template>
 </div>
 </div>
 
