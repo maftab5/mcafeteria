@@ -72,11 +72,8 @@ li > a {
 .navbar-toggle .icon-bar{
   background-color: #ffffff;
 }
-.carouselDiv{
-  text-align:center;overflow: hidden !important;
-}
+
 .carousel-content, .carousel-caption {
-  height: 900px !important;
   position: absolute;
   bottom: 20%;
   text-align: center;
@@ -249,8 +246,8 @@ li > a {
   background-color: #000000;
   overflow: hidden;
   text-align:center;
-  min-height: 400px;
-  max-height: 500px;
+  min-height: 300px;
+  max-height: 350px;
   
 }
 
